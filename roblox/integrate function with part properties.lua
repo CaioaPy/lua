@@ -7,17 +7,16 @@ local function RandomColor(part)
 end
 
 local function RandomOpacity(part)
-		part.Transparency.Random()
+	local random = Random.new()
+	local finalNumber = random:NextNumber(0, 1)
+	part.Transparency = finalNumber
 end
 
-if Enum.KeyCode.T then
-	RandomOpacity(part)
-end
-
-if Enum.KeyCode.R then
-	RandomColor(part)
-end
-
-UserInputService.InputBegan:Connect(RandomColor)
-
-UserInputService.InputBegan:Connect(RandomOpacity)
+UserInputService.InputBegan:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.R then
+		RandomColor(part)
+	end
+	if input.KeyCode == Enum.KeyCode.T then
+		RandomOpacity(part)
+	end
+end)
