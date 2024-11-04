@@ -1,6 +1,8 @@
 local UserInputService = game:GetService("UserInputService")
 
-part = workspace.MyPart
+local workspacevar = game.workspace
+
+local part = workspacevar:WaitForChild("MyPart")
 
 local function RandomColor(part)
 		part.BrickColor = BrickColor.Random()
