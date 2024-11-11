@@ -1,6 +1,6 @@
 local UserInputService = game:GetService("UserInputService")
 
-function KillAll()
+local function KillAll()
 	for _, player in pairs(game.Players:GetChildren()) do
 		local player = player.character
 		player:waitForChild("Humanoid").Health = 0
