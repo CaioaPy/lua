@@ -23,7 +23,7 @@ bindableFunction.OnInvoke = function()
 		m1cd = true
 		m1sUsed += 1
 		currentM1 += 1
-		game.ReplicatedStorage.CombatStun:FireServer()
+		game.ReplicatedStorage.CombatStun:FireServer("M1(".. currentM1..")")
 		for _, playingTrack in animator:GetPlayingAnimationTracks() do
 			playingTrack:Stop(0)
 		end
