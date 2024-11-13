@@ -3,34 +3,34 @@ local UIS = game:GetService("UserInputService")
 local animpath = game.ReplicatedStorage.Animations
 
 
-local cooldown = false
+local cooldownE = false
 
 UIS.InputBegan:Connect(function(input, IS)
 	if IS == true then return end
 	
 	if input.KeyCode == Enum.KeyCode.E then
-		if cooldown == false then
-			cooldown = true
-			game.ReplicatedStorage.CombatStun:FireServer()
+		if cooldownE == false then
+			cooldownE = true
+			game.ReplicatedStorage.CombatStun:FireServer("E")
 			local animation = player.Character.Humanoid:LoadAnimation(animpath.skillE)
 			animation:Play()
 			animation:AdjustWeight(10)
 			print("E pressed")
 			task.wait(0.45)
-			cooldown = false
+			cooldownE = false
 		end
 	end
-	local x = 2
+local cooldownR = false
 	if input.KeyCode == Enum.KeyCode.R then
-		if cooldown == false then
-			cooldown = true
-			game.ReplicatedStorage.CombatStun:FireServer()
+		if cooldownR == false then
+			cooldownR = true
+			game.ReplicatedStorage.CombatStun:FireServer("R")
 			local animation = player.Character.Humanoid:LoadAnimation(animpath.SkillR)
 			animation:Play()
 			animation:AdjustWeight(10)
 			print("E pressed")
 			task.wait(0.45)
-			cooldown = false
+			cooldownR = false
 		end
 	end
 end)
