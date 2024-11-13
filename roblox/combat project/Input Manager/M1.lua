@@ -46,10 +46,10 @@ bindableFunction.OnInvoke = function()
 			
 		end)
 		
-		if currentM1 == 2 then
-			
+		if currentM1 == 4 then
 			task.wait(comboCd)
 			currentM1 = 0
+			
 		end
 		
 		m1cd = false
